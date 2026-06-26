@@ -7,10 +7,18 @@ while True:
 
     if x_text == "q":
         break
-    
-    x = int(x_text)
+    try:
+        x = int(x_text)
+    except ValueError:
+        print("Please enter a valid integer!")
+        continue
 
-    y = int(input("Enter an integer, (y): "))
+    try:
+        y = int(input("Enter an integer, (y): "))
+    except ValueError:
+        print("Please enter a valid integer!")
+        continue
+    
     operation = input("Enter an operation, (+, -, *, /): ")
 
 
