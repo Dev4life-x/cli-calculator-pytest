@@ -13,30 +13,28 @@ while True:
     y = int(input("Enter an integer, (y): "))
     operation = input("Enter an operation, (+, -, *, /): ")
 
+
     if operation == "+":
-        
         result = x + y
-        print()
+        
 
     elif operation == "-":
-        
         result = x - y
-        print()
+        
 
     elif operation == "*":
-        
         result = x * y
-        print()
-    
+
     elif operation == "/":
-      
-        result = x / y
-        print()
-    
+        if y == 0:
+            print("Cannot divide by zero!")
+            continue
+        result = x / y    
+   
     else:
         print("Invalid operation!")
         continue
 
     print(f"{x} {operation} {y} = {result}")
-    print("_ _" * 40 )
+    print("-" * 40 )
 
