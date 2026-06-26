@@ -1,6 +1,5 @@
 # CLI calculator project.
 
-import sys
 while True:
 
     x_text = input("Enter (x) integer or q to quit: ")
@@ -18,7 +17,7 @@ while True:
     except ValueError:
         print("Please enter a valid integer!")
         continue
-    
+
     operation = input("Enter an operation, (+, -, *, /): ")
 
 
@@ -44,5 +43,5 @@ while True:
         continue
 
     print(f"{x} {operation} {y} = {result}")
-    print("-" * 40 )
+    print("-" * 40)
 
