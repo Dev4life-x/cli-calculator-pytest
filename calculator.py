@@ -4,6 +4,16 @@ def add(x, y):
     return x + y
 
 
+def subtract(x, y):
+    return x - y
+
+
+def multiply(x, y):
+    return x * y
+
+
+def division(x, y):
+    return x / y
 
 while True:
 
@@ -31,17 +41,17 @@ while True:
         
 
     elif operation == "-":
-        result = x - y
+        result = subtract(x, y)
         
 
     elif operation == "*":
-        result = x * y
+        result = multiply(x, y)
 
     elif operation == "/":
         if y == 0:
             print("Cannot divide by zero!")
             continue
-        result = x / y    
+        result = division(x, y)    
    
     else:
         print("Invalid operation!")
