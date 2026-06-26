@@ -1,5 +1,10 @@
 # CLI calculator project.
 
+def add(x, y):
+    return x + y
+
+
+
 while True:
 
     x_text = input("Enter (x) integer or q to quit: ")
@@ -22,7 +27,7 @@ while True:
 
 
     if operation == "+":
-        result = x + y
+        result = add(x, y)
         
 
     elif operation == "-":
