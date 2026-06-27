@@ -39,7 +39,10 @@ def get_y_input():
     
     return y
 
-    
+
+def get_operation():
+    operation = input("Enter an operation, (+, -, *, /): ")
+    return operation
     
 
 while True:
@@ -58,9 +61,8 @@ while True:
     if y is None:
         continue
  
-
-    operation = input("Enter an operation, (+, -, *, /): ")
-
+    
+    operation = get_operation()
 
     if operation == "+":
         result = add(x, y)
