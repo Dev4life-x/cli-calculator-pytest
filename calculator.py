@@ -15,17 +15,32 @@ def multiply(x, y):
 def division(x, y):
     return x / y
 
-while True:
 
-    x_text = input("Enter (x) integer or q to quit: ")
-
-    if x_text == "q":
-        break
+def get_x_input():
+    x_text = input("Enter (x) integer or (quit) to exit: ")
+    if x_text == "quit":
+        return "quit"
+    
     try:
         x = int(x_text)
     except ValueError:
         print("Please enter a valid integer!")
+        return None
+    
+    return x
+    
+    
+
+while True:
+    
+    x = get_x_input()
+
+    if x == "quit":
+        break
+
+    if x is None:
         continue
+
 
     try:
         y = int(input("Enter an integer, (y): "))
