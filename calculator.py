@@ -28,6 +28,17 @@ def get_x_input():
         return None
     
     return x
+
+
+def get_y_input():
+    try:
+        y = int(input("Enter an integer, (y): "))
+    except ValueError:
+        print("Please enter a valid integer!")
+        return None
+    
+    return y
+
     
     
 
@@ -41,12 +52,12 @@ while True:
     if x is None:
         continue
 
+    
+    y = get_y_input()
 
-    try:
-        y = int(input("Enter an integer, (y): "))
-    except ValueError:
-        print("Please enter a valid integer!")
+    if y is None:
         continue
+ 
 
     operation = input("Enter an operation, (+, -, *, /): ")
 
