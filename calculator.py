@@ -4,16 +4,20 @@ def add(x, y):
     return x + y
 
 
+
 def subtract(x, y):
     return x - y
+
 
 
 def multiply(x, y):
     return x * y
 
 
+
 def division(x, y):
     return x / y
+
 
 
 def get_x_input():
@@ -30,6 +34,7 @@ def get_x_input():
     return x
 
 
+
 def get_y_input():
     try:
         y = int(input("Enter an integer, (y): "))
@@ -40,10 +45,16 @@ def get_y_input():
     return y
 
 
+
 def get_operation():
     operation = input("Enter an operation, (+, -, *, /): ")
     return operation
-    
+
+
+
+def display_result(x, operation, y, result):
+    print(f"{x} {operation} {y} = {result}")
+
 
 while True:
     
@@ -85,6 +96,5 @@ while True:
         print("Invalid operation!")
         continue
 
-    print(f"{x} {operation} {y} = {result}")
-    print("-" * 40)
-
+    display_result(x, operation, y, result)
+    print("-" * 50)
