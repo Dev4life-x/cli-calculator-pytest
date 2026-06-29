@@ -25,6 +25,8 @@ def get_x_input():
     if x_text == "quit":
         return "quit"
     
+    if x_text.lower() == "history":
+        return "history"
     try:
         x = int(x_text)
     except ValueError:
@@ -32,6 +34,7 @@ def get_x_input():
         return None
     
     return x
+
 
 
 
@@ -66,6 +69,15 @@ while True:
         break
 
     if x is None:
+        continue
+    
+    if x == "history":
+        if len(history) == 0:
+            print("No history yet.")
+            continue
+        else:
+            for item in history:
+                print(item)
         continue
 
     
@@ -105,10 +117,7 @@ while True:
 
 
     display_result(x, operation, y, result)
-    print()
+    
     calculation_text = f"{x} {operation} {y} = {result}"
     history.append(calculation_text)
-    print(f"history = {history}")
-    
-
     print("-" * 50)
