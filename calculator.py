@@ -56,6 +56,8 @@ def display_result(x, operation, y, result):
     print(f"{x} {operation} {y} = {result}")
 
 
+history = []
+
 while True:
     
     x = get_x_input()
@@ -78,23 +80,35 @@ while True:
     if operation == "+":
         result = add(x, y)
         
+        
 
     elif operation == "-":
         result = subtract(x, y)
         
+        
 
     elif operation == "*":
         result = multiply(x, y)
+        
 
     elif operation == "/":
         if y == 0:
             print("Cannot divide by zero!")
             continue
-        result = division(x, y)    
+        result = division(x, y)
+        
    
     else:
         print("Invalid operation!")
         continue
 
+
+
     display_result(x, operation, y, result)
+    print()
+    calculation_text = f"{x} {operation} {y} = {result}"
+    history.append(calculation_text)
+    print(f"history = {history}")
+    
+
     print("-" * 50)
