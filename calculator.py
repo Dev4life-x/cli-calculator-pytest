@@ -1,4 +1,5 @@
 # CLI calculator project.
+import json
 
 def add(x, y):
     return x + y
@@ -37,7 +38,6 @@ def get_x_input():
 
 
 
-
 def get_y_input():
     try:
         y = int(input("Enter an integer, (y): "))
@@ -60,6 +60,9 @@ def display_result(x, operation, y, result):
 
 
 history = []
+def save_history(history):
+    with open("history.json", "w") as file:
+        json.dump(history, file)
 
 while True:
     
@@ -120,4 +123,7 @@ while True:
     
     calculation_text = f"{x} {operation} {y} = {result}"
     history.append(calculation_text)
+
+    save_history(history)
+    print("History saved")
     print("-" * 50)
