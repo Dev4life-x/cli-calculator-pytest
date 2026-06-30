@@ -5,20 +5,16 @@ def add(x, y):
     return x + y
 
 
-
 def subtract(x, y):
     return x - y
-
 
 
 def multiply(x, y):
     return x * y
 
 
-
 def division(x, y):
     return x / y
-
 
 
 def get_x_input():
@@ -53,16 +49,13 @@ def get_operation():
     return operation
 
 
-
 def display_result(x, operation, y, result):
     print(f"{x} {operation} {y} = {result}")
-
 
 
 def save_history(history):
     with open("history.json", "w") as file:
         json.dump(history, file)
-
 
 
 def load_history():
