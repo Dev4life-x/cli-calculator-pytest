@@ -34,3 +34,11 @@ Enter an integer, (y): 5
 Enter an operation, (+, -, *, /): +
 10 + 5 = 15
 History saved
+
+
+## Project Files
+
+* `calculator.py` — main Python program
+* `history.json` — saves calculation history
+* `README.md` — explains the project
+* `.gitignore` — ignores Python cache files
