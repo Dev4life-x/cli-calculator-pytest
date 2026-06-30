@@ -42,3 +42,13 @@ History saved
 * `history.json` — saves calculation history
 * `README.md` — explains the project
 * `.gitignore` — ignores Python cache files
+
+
+## What I Learned
+
+- How to split a program into smaller functions
+- How to validate user input with `try` and `except`
+- How to handle division by zero
+- How to save and load data with JSON
+- How to use Git commits as project checkpoints
+- How to write a basic README for a Python project
