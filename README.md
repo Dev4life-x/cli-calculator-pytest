@@ -12,3 +12,13 @@ This project supports basic arithmetic operations, input validation, and calcula
 * Save calculation history in a JSON file
 * Show calculation history with the `history` command
 * Exit the program with the `quit` command
+
+## How to Run
+
+Run the program from the terminal:
+
+```bash
+python3 calculator.py
+```
+
+Then follow the prompts to enter two numbers and choose an operation.
