@@ -132,5 +132,6 @@ def main():
         save_history(history)
         print("History saved")
         print("-" * 50)
-        
-main()
+
+if __name__ == "__main__":    
+    main()
