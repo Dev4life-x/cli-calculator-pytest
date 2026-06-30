@@ -22,7 +22,7 @@ def division(x, y):
 
 
 def get_x_input():
-    x_text = input("Enter (x) integer or (quit) to exit: ")
+    x_text = input("Enter (x) integer or (quit) to exit: ").strip().lower()
     if x_text == "quit":
         return "quit"
     
@@ -40,7 +40,7 @@ def get_x_input():
 
 def get_y_input():
     try:
-        y = int(input("Enter an integer, (y): "))
+        y = int(input("Enter an integer, (y): ")).strip()
     except ValueError:
         print("Please enter a valid integer!")
         return None
@@ -50,7 +50,7 @@ def get_y_input():
 
 
 def get_operation():
-    operation = input("Enter an operation, (+, -, *, /): ")
+    operation = input("Enter an operation, (+, -, *, /): ").strip()
     return operation
 
 
