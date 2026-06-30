@@ -26,25 +26,24 @@ def get_x_input():
     if x_text == "quit":
         return "quit"
     
-    if x_text.lower() == "history":
+    if x_text == "history":
         return "history"
     try:
         x = int(x_text)
     except ValueError:
         print("Please enter a valid integer!")
         return None
-    
     return x
 
 
 
 def get_y_input():
     try:
-        y = int(input("Enter an integer, (y): ")).strip()
+        y_text = input("Enter an integer, (y): ").strip()
+        y = int(y_text)   
     except ValueError:
         print("Please enter a valid integer!")
         return None
-    
     return y
 
 
