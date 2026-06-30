@@ -65,70 +65,72 @@ def load_history():
         return history
     except FileNotFoundError:
         return []
+
+def main():    
+    history = load_history()
+
+    while True:
     
-history = load_history()
+        x = get_x_input()
 
+        if x == "quit":
+            break
 
-while True:
-    
-    x = get_x_input()
-
-    if x == "quit":
-        break
-
-    if x is None:
-        continue
-    
-    if x == "history":
-        if len(history) == 0:
-            print("No history yet.")
+        if x is None:
             continue
+        
+        if x == "history":
+            if len(history) == 0:
+                print("No history yet.")
+                continue
+            else:
+                for item in history:
+                    print(item)
+            continue
+
+        
+        y = get_y_input()
+
+        if y is None:
+            continue
+    
+        
+        operation = get_operation()
+
+        if operation == "+":
+            result = add(x, y)
+            
+            
+
+        elif operation == "-":
+            result = subtract(x, y)
+            
+            
+
+        elif operation == "*":
+            result = multiply(x, y)
+            
+
+        elif operation == "/":
+            if y == 0:
+                print("Cannot divide by zero!")
+                continue
+            result = division(x, y)
+            
+    
         else:
-            for item in history:
-                print(item)
-        continue
-
-    
-    y = get_y_input()
-
-    if y is None:
-        continue
- 
-    
-    operation = get_operation()
-
-    if operation == "+":
-        result = add(x, y)
-        
-        
-
-    elif operation == "-":
-        result = subtract(x, y)
-        
-        
-
-    elif operation == "*":
-        result = multiply(x, y)
-        
-
-    elif operation == "/":
-        if y == 0:
-            print("Cannot divide by zero!")
+            print("Invalid operation!")
             continue
-        result = division(x, y)
+
+
+
+        display_result(x, operation, y, result)
         
-   
-    else:
-        print("Invalid operation!")
-        continue
+        calculation_text = f"{x} {operation} {y} = {result}"
+        history.append(calculation_text)
 
-
-
-    display_result(x, operation, y, result)
-    
-    calculation_text = f"{x} {operation} {y} = {result}"
-    history.append(calculation_text)
-
-    save_history(history)
-    print("History saved")
-    print("-" * 50)
+        save_history(history)
+        print("History saved")
+        print("-" * 50)
+        
+main()
