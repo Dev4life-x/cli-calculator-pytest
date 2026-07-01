@@ -54,3 +54,7 @@ def test_calculate_subtract():
 
 def test_calculate_multiply():
     assert calculate(55, 6, "*") == 330
+
+
+def test_calculate_division():
+    assert calculate(44, 11, "/") == 4.0
