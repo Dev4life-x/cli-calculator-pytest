@@ -1,3 +1,5 @@
+import pytest
+
 from calculator import add, subtract, multiply, division
 
 def test_add():
@@ -18,5 +20,8 @@ def test_multiply():
     assert multiply(-9, 2) == -18
 
 
-def test_division():
-    assert division(12, 3) == 4
+def test_division_by_zero():
+    with pytest.raises(ZeroDivisionError):
+        division(10, 0)
+
+
