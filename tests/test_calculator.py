@@ -20,8 +20,14 @@ def test_multiply():
     assert multiply(-9, 2) == -18
 
 
+def test_division():
+    division(0, 9) == 0
+    division(-15, 5) == -3
+
+
 def test_division_by_zero():
     with pytest.raises(ZeroDivisionError):
         division(10, 0)
+
 
 
