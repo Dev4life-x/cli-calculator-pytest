@@ -14,6 +14,8 @@ def test_subtract():
 
 def test_multiply():
     assert multiply(44, 2) == 88
+    assert multiply(0, 0) == 0
+    assert multiply(-9, 2) == -18
 
 
 def test_division():
