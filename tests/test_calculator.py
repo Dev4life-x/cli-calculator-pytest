@@ -58,3 +58,7 @@ def test_calculate_multiply():
 
 def test_calculate_division():
     assert calculate(44, 11, "/") == 4.0
+
+
+def test_calculate_invalid_operation():
+    assert calculate(34, 7, "%") is None
