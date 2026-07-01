@@ -51,3 +51,6 @@ def test_calculate_add():
 def test_calculate_subtract():
     assert calculate(44, 4, "-") == 40
 
+
+def test_calculate_multiply():
+    assert calculate(55, 6, "*") == 330
