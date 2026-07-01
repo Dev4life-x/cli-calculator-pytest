@@ -2,6 +2,8 @@ from calculator import add, subtract, multiply, division
 
 def test_add():
     assert add(6, 6) == 12
+    assert add(0, 0) == 0
+    assert add (-4, 4) == 0
 
 
 def test_subtract():
