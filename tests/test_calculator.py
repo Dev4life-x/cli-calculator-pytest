@@ -46,3 +46,8 @@ def calculate(x, y, operation):
 
 def test_calculate_add():
     assert calculate(25, 5, "+") == 30
+
+
+def test_calculate_subtract():
+    assert calculate(44, 4, "-") == 40
+
