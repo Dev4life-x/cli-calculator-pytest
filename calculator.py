@@ -17,6 +17,19 @@ def division(x, y):
     return x / y
 
 
+def calculate(x, y, operation):
+        if operation == "+":
+            return add(x, y)
+        elif operation == "-":
+            return subtract(x, y)
+        elif operation == "*":
+            return  multiply(x, y)
+        elif operation == "/":
+            return division(x, y)
+        return None
+
+
+
 def get_x_input():
     x_text = input("Enter (x) integer or (quit) to exit: ").strip().lower()
     if x_text == "quit":
@@ -93,7 +106,7 @@ def main():
 
         if y is None:
             continue
-        
+
         operation = get_operation()
 
         if operation == "+":

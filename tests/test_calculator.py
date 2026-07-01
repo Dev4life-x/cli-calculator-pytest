@@ -1,6 +1,6 @@
 import pytest
 
-from calculator import add, subtract, multiply, division
+from calculator import add, subtract, multiply, division, calculate
 
 def test_add():
     assert add(6, 6) == 12
@@ -21,9 +21,9 @@ def test_multiply():
 
 
 def test_division():
-    division(50, 5) == 10
-    division(0, 9) == 0
-    division(-15, 5) == -3
+    assert division(50, 5) == 10
+    assert division(0, 9) == 0
+    assert division(-15, 5) == -3
 
 
 def test_division_by_zero():
@@ -31,4 +31,18 @@ def test_division_by_zero():
         division(10, 0)
 
 
+def calculate(x, y, operation):
+        if operation == "+":
+            return add(x, y)
+        elif operation == "-":
+            return subtract(x, y)
+        elif operation == "*":
+            return  multiply(x, y)
+        elif operation == "/":
+            return division(x, y)
+        return None
 
+
+
+def test_calculate_add():
+    assert calculate(25, 5, "+") == 30
