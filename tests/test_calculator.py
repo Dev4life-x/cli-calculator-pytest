@@ -21,6 +21,7 @@ def test_multiply():
 
 
 def test_division():
+    division(50, 5) == 10
     division(0, 9) == 0
     division(-15, 5) == -3
 
