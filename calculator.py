@@ -121,17 +121,18 @@ def main():
         elif operation == "*":
             result = multiply(x, y)
 
-
-        elif operation == "/":
+        
+        if operation == "/":
             if y == 0:
                 print("Cannot divide by zero!")
                 continue
-            result = division(x, y)
+        
 
-        else:
-            print("Invalid operation!")
+        result = calculate(x, y, operation)
+
+        if result is None:
+            print("Oops! Invalid operation.")
             continue
-
 
 
         display_result(x, operation, y, result)
@@ -146,3 +147,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+    
