@@ -18,16 +18,15 @@ def division(x, y):
 
 
 def calculate(x, y, operation):
-        if operation == "+":
-            return add(x, y)
-        elif operation == "-":
-            return subtract(x, y)
-        elif operation == "*":
-            return  multiply(x, y)
-        elif operation == "/":
-            return division(x, y)
-        return None
-
+    if operation == "+":
+        return add(x, y)
+    elif operation == "-":
+        return subtract(x, y)
+    elif operation == "*":
+        return multiply(x, y)
+    elif operation == "/":
+        return division(x, y)
+    return None
 
 
 def get_x_input():
@@ -37,22 +36,31 @@ def get_x_input():
 
     if x_text == "history":
         return "history"
+    
     try:
         x = int(x_text)
+
     except ValueError:
         print("Please enter a valid integer!")
         return None
+    
     return x
 
 
 
 def get_y_input():
     try:
-        y_text = input("Enter an integer, (y): ").strip()
+        y_text = input("Enter (y) integer or (quit) to exit: ").strip().lower()
+
+        if y_text == "quit":
+            return "quit"
+        
         y = int(y_text)
+
     except ValueError:
         print("Please enter a valid integer!")
         return None
+    
     return y
 
 
@@ -79,6 +87,7 @@ def load_history():
     except FileNotFoundError:
         return []
 
+
 def main():
     history = load_history()
 
@@ -102,37 +111,27 @@ def main():
             continue
 
 
+        operation = get_operation()
+
+        if operation not in ["+", "-", "*", "/"]:
+            print("Invalid operation!")
+            continue
+
         y = get_y_input()
+
+        if y == "quit":
+            break
 
         if y is None:
             continue
 
-        operation = get_operation()
 
-        if operation == "+":
-            result = add(x, y)
+        if operation == "/" and y == 0:
+            print("Cannot divide by zero!")
+            continue 
 
-
-
-        elif operation == "-":
-            result = subtract(x, y)
-
-
-        elif operation == "*":
-            result = multiply(x, y)
-
-        
-        if operation == "/":
-            if y == 0:
-                print("Cannot divide by zero!")
-                continue
-        
 
         result = calculate(x, y, operation)
-
-        if result is None:
-            print("Oops! Invalid operation.")
-            continue
 
 
         display_result(x, operation, y, result)
