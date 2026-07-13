@@ -77,13 +77,15 @@ def display_result(x, operation, y, result):
 def save_history(history, filename="history.json"):
     with open(filename, "w") as file:
         json.dump(history, file)
-        
 
-def load_history():
+
+def load_history(filename="history.json"):
     try:
-        with open("history.json", "r") as file:
+        with open(filename, "r") as file:
             history = json.load(file)
+
         return history
+    
     except FileNotFoundError:
         return []
 
