@@ -74,10 +74,10 @@ def display_result(x, operation, y, result):
     print(f"{x} {operation} {y} = {result}")
 
 
-def save_history(history):
-    with open("history.json", "w") as file:
+def save_history(history, filename="history.json"):
+    with open(filename, "w") as file:
         json.dump(history, file)
-
+        
 
 def load_history():
     try:
