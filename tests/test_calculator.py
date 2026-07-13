@@ -1,11 +1,14 @@
+import json
+
 import pytest
 
-from calculator import add, subtract, multiply, division, calculate
+from calculator import add, subtract, multiply, division, calculate, save_history
+
 
 def test_add():
     assert add(6, 6) == 12
     assert add(0, 0) == 0
-    assert add (-4, 4) == 0
+    assert add(-4, 4) == 0
 
 
 def test_subtract():
@@ -31,18 +34,18 @@ def test_division_by_zero():
         division(10, 0)
 
 
-def calculate(x, y, operation):
-        if operation == "+":
-            return add(x, y)
-        elif operation == "-":
-            return subtract(x, y)
-        elif operation == "*":
-            return  multiply(x, y)
-        elif operation == "/":
-            return division(x, y)
-        return None
+def test_save_history(tmp_path):
+    filename = tmp_path / "test_history.json"
+    history = ["30 + 5 = 35"]
+
+    save_history(history, filename)
+
+    with open(filename, "r") as file:
+        data = json.load(file)
 
 
+    assert data == history 
+    
 
 def test_calculate_add():
     assert calculate(25, 5, "+") == 30
