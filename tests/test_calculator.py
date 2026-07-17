@@ -2,7 +2,7 @@ import json
 
 import pytest
 
-from calculator import add, subtract, multiply, division, calculate, save_history
+from calculator import add, subtract, multiply, division, calculate, save_history, load_history
 
 
 def test_add():
@@ -45,7 +45,17 @@ def test_save_history(tmp_path):
 
 
     assert data == history 
-    
+
+
+def test_load_history(tmp_path):
+    filename = tmp_path / "test_history.json"
+    history = ["50 + 55 = 105"]
+
+    with open(filename, "w") as file:
+        json.dump(history, file)
+
+    assert load_history(filename) == history
+
 
 def test_calculate_add():
     assert calculate(25, 5, "+") == 30
